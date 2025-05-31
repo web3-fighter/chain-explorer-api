@@ -1,7 +1,7 @@
 package etherscan
 
 import (
-	"github.com/web3-fighter/chain-explorer-api/pkg/helper"
+	"github.com/web3-fighter/chain-explorer-api/pkg/common"
 	"net/url"
 	"strconv"
 )
@@ -18,7 +18,7 @@ type TransactionResponse[T any] struct {
 
 type AccountBalance struct {
 	Account string         `json:"account"`
-	Balance *helper.BigInt `json:"balance"`
+	Balance *common.BigInt `json:"balance"`
 }
 
 type GasTrackerGasOracleResp struct {

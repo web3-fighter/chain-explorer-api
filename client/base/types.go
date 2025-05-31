@@ -3,7 +3,7 @@ package base
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/web3-fighter/chain-explorer-api/pkg/helper"
+	"github.com/web3-fighter/chain-explorer-api/pkg/common"
 	"strconv"
 	"strings"
 )
@@ -31,16 +31,16 @@ type SolScanEnvelope struct {
 
 type NormalTx struct {
 	BlockNumber       int            `json:"blockNumber,string"`
-	TimeStamp         helper.Time    `json:"timeStamp"`
+	TimeStamp         common.Time    `json:"timeStamp"`
 	Hash              string         `json:"hash"`
 	Nonce             int            `json:"nonce,string"`
 	BlockHash         string         `json:"blockHash"`
 	TransactionIndex  int            `json:"transactionIndex,string"`
 	From              string         `json:"from"`
 	To                string         `json:"to"`
-	Value             *helper.BigInt `json:"value"`
+	Value             *common.BigInt `json:"value"`
 	Gas               int            `json:"gas,string"`
-	GasPrice          *helper.BigInt `json:"gasPrice"`
+	GasPrice          *common.BigInt `json:"gasPrice"`
 	IsError           int            `json:"isError,string"`
 	TxReceiptStatus   string         `json:"txreceipt_status"`
 	Input             string         `json:"input"`
@@ -54,11 +54,11 @@ type NormalTx struct {
 
 type InternalTx struct {
 	BlockNumber     int            `json:"blockNumber,string"`
-	TimeStamp       helper.Time    `json:"timeStamp"`
+	TimeStamp       common.Time    `json:"timeStamp"`
 	Hash            string         `json:"hash"`
 	From            string         `json:"from"`
 	To              string         `json:"to"`
-	Value           *helper.BigInt `json:"value"`
+	Value           *common.BigInt `json:"value"`
 	ContractAddress string         `json:"contractAddress"`
 	Input           string         `json:"input"`
 	Type            string         `json:"type"`
@@ -71,20 +71,20 @@ type InternalTx struct {
 
 type ERC20Transfer struct {
 	BlockNumber       int            `json:"blockNumber,string"`
-	TimeStamp         helper.Time    `json:"timeStamp"`
+	TimeStamp         common.Time    `json:"timeStamp"`
 	Hash              string         `json:"hash"`
 	Nonce             int            `json:"nonce,string"`
 	BlockHash         string         `json:"blockHash"`
 	From              string         `json:"from"`
 	ContractAddress   string         `json:"contractAddress"`
 	To                string         `json:"to"`
-	Value             *helper.BigInt `json:"value"`
+	Value             *common.BigInt `json:"value"`
 	TokenName         string         `json:"tokenName"`
 	TokenSymbol       string         `json:"tokenSymbol"`
 	TokenDecimal      uint8          `json:"tokenDecimal,string"`
 	TransactionIndex  int            `json:"transactionIndex,string"`
 	Gas               int            `json:"gas,string"`
-	GasPrice          *helper.BigInt `json:"gasPrice"`
+	GasPrice          *common.BigInt `json:"gasPrice"`
 	GasUsed           int            `json:"gasUsed,string"`
 	CumulativeGasUsed int            `json:"cumulativeGasUsed,string"`
 	Input             string         `json:"input"`
@@ -93,20 +93,20 @@ type ERC20Transfer struct {
 
 type ERC721Transfer struct {
 	BlockNumber       int            `json:"blockNumber,string"`
-	TimeStamp         helper.Time    `json:"timeStamp"`
+	TimeStamp         common.Time    `json:"timeStamp"`
 	Hash              string         `json:"hash"`
 	Nonce             int            `json:"nonce,string"`
 	BlockHash         string         `json:"blockHash"`
 	From              string         `json:"from"`
 	ContractAddress   string         `json:"contractAddress"`
 	To                string         `json:"to"`
-	TokenID           *helper.BigInt `json:"tokenID"`
+	TokenID           *common.BigInt `json:"tokenID"`
 	TokenName         string         `json:"tokenName"`
 	TokenSymbol       string         `json:"tokenSymbol"`
 	TokenDecimal      uint8          `json:"tokenDecimal,string"`
 	TransactionIndex  int            `json:"transactionIndex,string"`
 	Gas               int            `json:"gas,string"`
-	GasPrice          *helper.BigInt `json:"gasPrice"`
+	GasPrice          *common.BigInt `json:"gasPrice"`
 	GasUsed           int            `json:"gasUsed,string"`
 	CumulativeGasUsed int            `json:"cumulativeGasUsed,string"`
 	Input             string         `json:"input"`
@@ -115,21 +115,21 @@ type ERC721Transfer struct {
 
 type ERC1155Transfer struct {
 	BlockNumber       int            `json:"blockNumber,string"`
-	TimeStamp         helper.Time    `json:"timeStamp"`
+	TimeStamp         common.Time    `json:"timeStamp"`
 	Hash              string         `json:"hash"`
 	Nonce             int            `json:"nonce,string"`
 	BlockHash         string         `json:"blockHash"`
 	From              string         `json:"from"`
 	ContractAddress   string         `json:"contractAddress"`
 	To                string         `json:"to"`
-	TokenID           *helper.BigInt `json:"tokenID"`
+	TokenID           *common.BigInt `json:"tokenID"`
 	TokenName         string         `json:"tokenName"`
 	TokenSymbol       string         `json:"tokenSymbol"`
 	TokenDecimal      uint8          `json:"tokenDecimal,string"`
 	TokenValue        uint8          `json:"tokenValue,string"`
 	TransactionIndex  int            `json:"transactionIndex,string"`
 	Gas               int            `json:"gas,string"`
-	GasPrice          *helper.BigInt `json:"gasPrice"`
+	GasPrice          *common.BigInt `json:"gasPrice"`
 	GasUsed           int            `json:"gasUsed,string"`
 	CumulativeGasUsed int            `json:"cumulativeGasUsed,string"`
 	Input             string         `json:"input"`
@@ -138,21 +138,21 @@ type ERC1155Transfer struct {
 
 type SwapTransaction struct {
 	BlockNumber       int            `json:"blockNumber,string"`
-	TimeStamp         helper.Time    `json:"timeStamp"`
+	TimeStamp         common.Time    `json:"timeStamp"`
 	Hash              string         `json:"hash"`
 	Nonce             int            `json:"nonce,string"`
 	BlockHash         string         `json:"blockHash"`
 	From              string         `json:"from"`
 	ContractAddress   string         `json:"contractAddress"`
 	To                string         `json:"to"`
-	TokenID           *helper.BigInt `json:"tokenID"`
+	TokenID           *common.BigInt `json:"tokenID"`
 	TokenName         string         `json:"tokenName"`
 	TokenSymbol       string         `json:"tokenSymbol"`
 	TokenDecimal      uint8          `json:"tokenDecimal,string"`
 	TokenValue        uint8          `json:"tokenValue,string"`
 	TransactionIndex  int            `json:"transactionIndex,string"`
 	Gas               int            `json:"gas,string"`
-	GasPrice          *helper.BigInt `json:"gasPrice"`
+	GasPrice          *common.BigInt `json:"gasPrice"`
 	GasUsed           int            `json:"gasUsed,string"`
 	CumulativeGasUsed int            `json:"cumulativeGasUsed,string"`
 	Input             string         `json:"input"`
@@ -163,8 +163,8 @@ type SwapTransaction struct {
 
 type MinedBlock struct {
 	BlockNumber int            `json:"blockNumber,string"`
-	TimeStamp   helper.Time    `json:"timeStamp"`
-	BlockReward *helper.BigInt `json:"blockReward"`
+	TimeStamp   common.Time    `json:"timeStamp"`
+	BlockReward *common.BigInt `json:"blockReward"`
 }
 
 type ContractSource struct {
@@ -190,22 +190,22 @@ type ExecutionStatus struct {
 
 type BlockRewards struct {
 	BlockNumber int            `json:"blockNumber,string"`
-	TimeStamp   helper.Time    `json:"timeStamp"`
+	TimeStamp   common.Time    `json:"timeStamp"`
 	BlockMiner  string         `json:"blockMiner"`
-	BlockReward *helper.BigInt `json:"blockReward"`
+	BlockReward *common.BigInt `json:"blockReward"`
 	Uncles      []struct {
 		Miner         string         `json:"miner"`
 		UnclePosition int            `json:"unclePosition,string"`
-		BlockReward   *helper.BigInt `json:"blockreward"`
+		BlockReward   *common.BigInt `json:"blockreward"`
 	} `json:"uncles"`
-	UncleInclusionReward *helper.BigInt `json:"uncleInclusionReward"`
+	UncleInclusionReward *common.BigInt `json:"uncleInclusionReward"`
 }
 
 type LatestPrice struct {
 	ETHBTC          float64     `json:"ethbtc,string"`
-	ETHBTCTimestamp helper.Time `json:"ethbtc_timestamp"`
+	ETHBTCTimestamp common.Time `json:"ethbtc_timestamp"`
 	ETHUSD          float64     `json:"ethusd,string"`
-	ETHUSDTimestamp helper.Time `json:"ethusd_timestamp"`
+	ETHUSDTimestamp common.Time `json:"ethusd_timestamp"`
 }
 
 type Log struct {

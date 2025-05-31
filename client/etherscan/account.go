@@ -2,15 +2,15 @@ package etherscan
 
 import (
 	"fmt"
-	"github.com/web3-fighter/chain-explorer-api/pkg/helper"
+	"github.com/web3-fighter/chain-explorer-api/pkg/common"
 	"github.com/web3-fighter/chain-explorer-api/types"
 )
 
 func (c *ChainExplorerClient) GetAccountBalance(req *types.AccountBalanceRequest) (*types.AccountBalanceResponse, error) {
-	balance := new(helper.BigInt)
+	balance := new(common.BigInt)
 	// 主币
 	if req.ContractAddress[0] == "0x00" {
-		param := helper.M{
+		param := common.M{
 			"tag":     "latest",
 			"address": req.Account[0],
 		}
@@ -21,7 +21,7 @@ func (c *ChainExplorerClient) GetAccountBalance(req *types.AccountBalanceRequest
 		}
 	} else {
 		// 代币
-		param := helper.M{
+		param := common.M{
 			"contractaddress": req.ContractAddress[0],
 			"address":         req.Account[0],
 			"tag":             "latest",
@@ -47,7 +47,7 @@ func (c *ChainExplorerClient) GetMultiAccountBalance(req *types.AccountBalanceRe
 	if req.ContractAddress[0] != "0x00" {
 		return []*types.AccountBalanceResponse{}, nil
 	}
-	param := helper.M{
+	param := common.M{
 		"tag":     "latest",
 		"address": req.Account,
 	}

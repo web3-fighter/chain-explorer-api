@@ -5,8 +5,8 @@ import (
 )
 
 type ChainExplorer interface {
-	// GetChainExplorer 获取链信息
-	GetChainExplorer(req *types.SupportChainExplorerRequest) (*types.SupportChainExplorerResponse, error)
+	//// GetChainExplorer 获取链信息
+	//GetChainExplorer(req *types.SupportChainExplorerRequest) (*types.SupportChainExplorerResponse, error)
 	// GetAccountBalance 获取账户余额
 	GetAccountBalance(req *types.AccountBalanceRequest) (*types.AccountBalanceResponse, error)
 	// GetMultiAccountBalance 获取多个账户余额

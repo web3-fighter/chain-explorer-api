@@ -59,6 +59,7 @@ type TokenTransferDetail struct {
 	IsToContract         bool   `json:"isToContract"`
 	TokenId              string `json:"tokenId"`
 	Amount               string `json:"amount"`
+	Decimals             int    `json:"decimals"`
 }
 
 type ContractDetail struct {

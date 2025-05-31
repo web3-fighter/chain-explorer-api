@@ -1,4 +1,4 @@
-package helper
+package common
 
 import (
 	"github.com/web3-fighter/chain-explorer-api/pkg/xerr"

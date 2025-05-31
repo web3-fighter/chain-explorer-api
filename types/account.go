@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/web3-fighter/chain-explorer-api/pkg/helper"
+	"github.com/web3-fighter/chain-explorer-api/pkg/common"
 	"net/url"
 	"strconv"
 )
@@ -19,7 +19,7 @@ type AccountBalanceRequest struct {
 
 type AccountBalanceResponse struct {
 	Account         string         `json:"account"`
-	Balance         *helper.BigInt `json:"balance"`
+	Balance         *common.BigInt `json:"balance"`
 	BalanceStr      string         `json:"balanceStr"`
 	Symbol          string         `json:"symbol"`
 	ContractAddress string         `json:"contractAddress"`

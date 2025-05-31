@@ -1,24 +1,16 @@
-package etherscan
+package solscan
 
 import (
 	"github.com/web3-fighter/chain-explorer-api/client"
 	"github.com/web3-fighter/chain-explorer-api/client/base"
 	"github.com/web3-fighter/chain-explorer-api/client/unimplement"
-	"time"
 )
 
 var _ client.ChainExplorer = (*ChainExplorerClient)(nil)
 
-const ChainExplorerName = "etherscan"
+const ChainExplorerName = "solscan"
 
 type ChainExplorerClient struct {
 	unimplement.UnimplementedChainExplorerClient
 	baseClient *base.BaseClient
-}
-
-func NewChainExplorerClient(key string, baseURL string, verbose bool, timeout time.Duration) (*ChainExplorerClient, error) {
-	baseClient := base.NewBaseClient(key, baseURL, verbose, timeout)
-	return &ChainExplorerClient{
-		baseClient: baseClient,
-	}, nil
 }
