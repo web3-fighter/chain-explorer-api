@@ -13,6 +13,7 @@ const ChainExplorerName = "etherscan"
 
 type ChainExplorerClient struct {
 	unimplement.UnimplementedChainExplorerClient
+	// https://api.etherscan.io/api?'
 	baseClient *base.BaseClient
 }
 
